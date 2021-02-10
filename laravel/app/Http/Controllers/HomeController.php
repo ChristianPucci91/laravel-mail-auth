@@ -24,4 +24,16 @@ class HomeController extends Controller
         -> send(new testMail('Questo è un testo di prova'));
         return view('home');
     }
+
+    public function sendMail(Request $request) {
+
+      $data = $request -> validate([
+        'mailText' => 'required|min:10'
+      ]);
+
+      Mail::to(Auth::user()-> email)
+      -> send(new testMail($data['mailText']));
+
+      return redirect() -> back();
+    }
 }
