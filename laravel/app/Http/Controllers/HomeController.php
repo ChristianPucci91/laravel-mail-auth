@@ -21,7 +21,7 @@ class HomeController extends Controller
         $mail = Auth::user() -> email;
 
         Mail::to($mail)
-        -> send(new testMail());
+        -> send(new testMail('Questo è un testo di prova'));
         return view('home');
     }
 }

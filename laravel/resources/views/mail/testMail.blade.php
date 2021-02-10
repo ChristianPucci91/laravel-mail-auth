@@ -8,7 +8,9 @@
 
     <div class="container">
 
-      <h1>Hello world!</h1>
+      <h1>Hello world! to {{ Auth::user() -> name }}</h1>
+
+      <p> {{ $text }}</p>
 
     </div>
 

@@ -11,9 +11,12 @@ class testMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $text;
 
-    public function __construct()
+    public function __construct($text)
     {
+
+      $this -> text = $text;
 
     }
 
